@@ -1,0 +1,25 @@
+.field {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+.label{
+    text-align: left;
+    display: block;
+    color: #868b95;
+    margin-bottom: 6px;;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    border: 2px solid #00509E;
+    border-radius: 6px;
+}

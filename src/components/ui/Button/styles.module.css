@@ -1,0 +1,14 @@
+.button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #1173DA;
+    color:  white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.button.disabled{
+    opacity: 0.3;
+    background-color: rgba(17, 115, 218, 0.05);
+    color: #011828;
+}
