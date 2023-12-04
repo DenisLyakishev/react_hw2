@@ -1,0 +1,28 @@
+.form {
+  width: 100%;
+  /*max-width: 784px;*/
+  width: 420px;
+  height: 184px;
+  padding: 20px 30px;
+  background-color: white;
+  /*olor: #06509e;*/
+  border-radius: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 400;
+  text-align: left;
+  color: #424952;
+}
+
+.message {
+  padding: 20px 30px;
+  color: red;
+}
+
+.product {
+  position: absolute;
+  width: 320px;
+  height: 184px;
+}
