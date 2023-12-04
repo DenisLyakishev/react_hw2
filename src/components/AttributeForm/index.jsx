@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 
 import { Field } from '../ui/Field/index.jsx';
 import { Button } from '../ui/Button/index.jsx';
+import { Title } from './styles';
 import classes from './styles.module.css';
+
+import { Dropdown } from './../ui/Dropdown';
+
 
 
 export function AttributeForm({ title = "", variant }) {
@@ -16,6 +20,21 @@ export function AttributeForm({ title = "", variant }) {
     const [performance, setPerformance] = useState('');
     const [pic, setPic] = useState('');
     const [cancel, setCancel] = useState(false);
+
+    const [formState, setFormState] = useState({
+        code: '',
+        pathEl: '',
+        name: '',
+        performance: '',
+        pic: '',
+    });
+
+    function setField(key, event) {
+        setFormState({
+            ...formState,
+            [key]: event.target.value,
+        });
+    }
 
     function setCodeHandler(event) {
         setCode(event.target.value);
@@ -76,29 +95,30 @@ export function AttributeForm({ title = "", variant }) {
     )
 
     return (
-        <div className={classes.form}>
-            <h1 className={classes.title}>{title}</h1>
+        <div className={classes.product}>
+            {/*<div className={classes.form}>
+            <Title color='red' activet='true' >{title}</Title>
             <form onSubmit={onSubmit} ref={formRef}>
                 <Field
-                    value={code}
+                    value={formState.code}
                     onChange={setCodeHandler}
                     label={"Код"}
                 />
                 <Field
                     label="Путь к элементу"
-                    value={pathEl}
+                    value={formState.pathEl}
                     onChange={setPathElHandler} />
                 <Field
                     label="Наименование"
-                    value={name}
+                    value={formState.name}
                     onChange={setNameHandler} />
                 <Field
                     label="Представление"
-                    value={performance}
+                    value={formState.performance}
                     onChange={setPerformanceHandler} />
                 <Field
                     label="Пиктограмма"
-                    value={pic}
+                    value={formState.pic}
                     onChange={setPicHandler} />
                 <div className="flex justify-center">
                     <Button disabled={isButtonDisabled} onClick={() => setCancelFlag(true)}>Отменить</Button>
@@ -108,8 +128,11 @@ export function AttributeForm({ title = "", variant }) {
                 {message && (<div className={classes.message}>{message}</div>)}
 
             </form>
-        </div
-        >);
+      </div>*/}
+
+            <Dropdown  label="Продукты" />
+        </div>
+    );
 }
 
 AttributeForm.propTypes = {
